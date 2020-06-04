@@ -46,9 +46,6 @@ class Phonebook extends Component {
     const { name, number } = this.state;
     return (
       <form onSubmit={this.submitHandler} className={classes.form}>
-        <CSSTransition in classNames="title" timeout={500} appear>
-          <h2 className={classes.title}>Phonebook</h2>
-        </CSSTransition>
         <label htmlFor="name" className={classes.lebel}>
           <p className={classes.name}>Name</p>
           <input

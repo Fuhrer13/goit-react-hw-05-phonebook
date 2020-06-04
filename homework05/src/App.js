@@ -33,6 +33,8 @@ export default class App extends Component {
       toast.warn(`This name is already in contact list`);
     } else if (contact.name.length > 2 && contact.number.length > 5) {
       this.setState({ contacts: [...this.state.contacts, contact] });
+    } else {
+      toast.eror("length too short ...");
     }
   };
 
@@ -66,6 +68,9 @@ export default class App extends Component {
     return (
       <>
         <div className={classes.container}>
+          <CSSTransition in classNames="title" timeout={500} appear>
+            <h2 className={classes.title}>Phonebook</h2>
+          </CSSTransition>
           <Phonebook addContact={this.addContact} />
           <ToastContainer autoClose={5000} />
           {this.state.contacts.length >= 2 && (
